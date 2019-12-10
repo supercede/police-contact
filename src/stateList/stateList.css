@@ -1,0 +1,49 @@
+.state-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.state {
+  margin: 10px;
+  border: 1px solid #fa8072;
+  box-shadow: 0 2px 5px 0 #a30000;
+  background-color: #eeeeee;
+  border-radius: 5px;
+  text-align: center;
+  height: 210px;
+  position: relative;
+  z-index: 1;
+}
+
+.state h2 {
+  font-family: "Oswald", sans-serif;
+}
+
+.state::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.1;
+  background: url("../assets/images/logo.jpg") no-repeat center;
+  background-size: contain;
+  z-index: -5;
+}
+
+@media screen and (max-width: 250px) {
+  .state h2 {
+    font-size: 20px;
+  }
+
+  .state-container {
+    grid-template-columns: 100%;
+    overflow: hidden;
+  }
+
+  .state {
+    margin: 7px;
+    height: auto;
+  }
+}
